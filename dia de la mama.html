@@ -1,0 +1,339 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Feliz Día de la Madre</title>
+    <script src="https://cdn.tailwindcss.com">
+    </script>
+    <audio controls>
+  <source src="Cristo No Megumi_7499296547444772118.mp3" type="audio/mpeg">
+  <source src="1mama.mp3" type="audio/ogg">
+</audio>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&family=Poppins:wght@300;400;600&display=swap');
+        
+        .font-dancing {
+            font-family: 'Dancing Script', cursive;
+        }
+        
+        .font-poppins {
+            font-family: 'Poppins', sans-serif;
+        }
+        
+        .heart-beat {
+            animation: heartbeat 1.5s infinite;
+        }
+        
+        .floating {
+            animation: floating 3s ease-in-out infinite;
+        }
+        
+        @keyframes heartbeat {
+            0% { transform: scale(1); }
+            25% { transform: scale(1.1); }
+            50% { transform: scale(1); }
+            75% { transform: scale(1.1); }
+            100% { transform: scale(1); }
+        }
+        
+        @keyframes floating {
+            0% { transform: translateY(0px); }
+            50% { transform: translateY(-15px); }
+            100% { transform: translateY(0px); }
+        }
+        
+        .polaroid {
+            background: white;
+            padding: 1rem 1rem 3rem 1rem;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.2), 0 6px 20px rgba(0,0,0,0.19);
+            transform: rotate(-5deg);
+            transition: all 0.3s ease;
+        }
+        
+        .polaroid:hover {
+            transform: rotate(0deg) scale(1.05);
+        }
+        
+        .polaroid::after {
+            content: "Te quiero mamá";
+            position: absolute;
+            bottom: 1rem;
+            left: 0;
+            right: 0;
+            text-align: center;
+            font-family: 'Dancing Script', cursive;
+            color: #333;
+        }
+        
+        .message-box {
+            background: linear-gradient(135deg, #f9f9f9 0%, #ffffff 100%);
+            border-left: 5px solid #f472b6;
+            transition: all 0.3s ease;
+        }
+        
+        .message-box:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+        }
+        
+        .flower {
+            position: relative;
+            width: 40px;
+            height: 40px;
+        }
+        
+        .flower-center {
+            position: absolute;
+            width: 15px;
+            height: 15px;
+            background: #f59e0b;
+            border-radius: 50%;
+            top: 12.5px;
+            left: 12.5px;
+            z-index: 2;
+        }
+        
+        .flower-petal {
+            position: absolute;
+            width: 15px;
+            height: 30px;
+            background: #f472b6;
+            border-radius: 50%;
+            top: 5px;
+            z-index: 1;
+        }
+        
+        .petal-1 { transform: rotate(0deg) translateY(-10px); }
+        .petal-2 { transform: rotate(45deg) translateY(-10px); }
+        .petal-3 { transform: rotate(90deg) translateY(-10px); }
+        .petal-4 { transform: rotate(135deg) translateY(-10px); }
+        .petal-5 { transform: rotate(180deg) translateY(-10px); }
+        .petal-6 { transform: rotate(225deg) translateY(-10px); }
+        .petal-7 { transform: rotate(270deg) translateY(-10px); }
+        .petal-8 { transform: rotate(315deg) translateY(-10px); }
+    </style>
+</head>
+<body class="bg-gradient-to-b from-pink-50 to-purple-50 min-h-screen font-poppins">
+    <div class="container mx-auto px-4 py-8">
+        <!-- Encabezado -->
+        <header class="text-center mb-12">
+            <h1 class="text-5xl md:text-6xl font-dancing text-pink-600 mb-4">Feliz Día de la Madre</h1>
+            <div class="flex justify-center">
+                <div class="heart-beat text-red-500 text-4xl mx-2"><i class="fas fa-heart"></i></div>
+                <div class="heart-beat text-red-500 text-4xl mx-2" style="animation-delay: 0.2s"><i class="fas fa-heart"></i></div>
+                <div class="heart-beat text-red-500 text-4xl mx-2" style="animation-delay: 0.4s"><i class="fas fa-heart"></i></div>
+            </div>
+        </header>
+        
+        <!-- Sección principal -->
+        <main class="flex flex-col lg:flex-row items-center justify-between gap-8 mb-16">
+            <!-- Foto con efecto polaroid -->
+            <div class="relative w-64 h-80 mx-auto lg:mx-0 polaroid">
+                <img id="momPhoto" src="photo1.jpg" 
+                     alt="Mamá" class="w-full h-full object-cover">
+                <button onclick="changePhoto()" class="absolute top-2 right-2 bg-white rounded-full p-2 shadow-md hover:bg-pink-100 transition">
+                    <i class="fas fa-camera text-pink-600"></i>
+                </button>
+            </div>
+            
+            <!-- Mensaje -->
+            <div class="max-w-lg message-box p-6 rounded-lg shadow-md">
+                <h2 class="text-2xl font-dancing text-pink-700 mb-4">Para la mejor mamá del mundo</h2>
+                <p class="text-gray-700 mb-4">Querida mamá,</p>
+                <p class="text-gray-700 mb-4">Mamá, eres mi todo, mi guía, mi apoyo, mi refugio,  Gracias por estar siempre ahí para mí, por escucharme, por abrazarme, por hacerme sentir amada.</p>
+                <p class="text-gray-700 mb-4">Recuerdo tus sonrisas, tus risas, tus lágrimas, Recuerdo siempre las pláticas que tenemos, en las que me escuchas y me aconsejas las mañanas que me despertabas con un "levantate!!! A qué hora vas a ir, ya es tarde!!!</p>
+                <p class="text-gray-700 mb-4">Eres la mujer más fuerte que conozco, Eres la que me enseñó a ser valiente, a ser independiente, a ser mí misma.</p>
+                <p class="text-gray-700 mb-4">Te agradezco por todo, mamá Te agradezco por ser mi mamá, Te quiero más que ayer, pero menos que mañana.</p>
+                <p class="font-dancing text-xl text-pink-600">Feliz Día de la Madre, mamita querida.</p>
+                <p class="font-dancing text-xl text-pink-600">¡Te amo! ❤</p>
+                
+                <div class="flex justify-end mt-4">
+                    <div class="flower">
+                        <div class="flower-center"></div>
+                        <div class="flower-petal petal-1"></div>
+                        <div class="flower-petal petal-2"></div>
+                        <div class="flower-petal petal-3"></div>
+                        <div class="flower-petal petal-4"></div>
+                        <div class="flower-petal petal-5"></div>
+                        <div class="flower-petal petal-6"></div>
+                        <div class="flower-petal petal-7"></div>
+                        <div class="flower-petal petal-8"></div>
+                    </div>
+                </div>
+            </div>
+        </main>
+        
+        <!-- Galería de recuerdos -->
+        <section class="mb-16">
+            <h2 class="text-3xl font-dancing text-center text-pink-600 mb-8">Nuestros momentos especiales</h2>
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+                <div class="floating" style="animation-delay: 0s;">
+                    <img src="ft1.jpg" 
+                         alt="Recuerdo 1" class="w-full h-48 object-cover rounded-lg shadow-md hover:shadow-xl transition">
+                </div>
+                <div class="floating" style="animation-delay: 0.2s;">
+                    <img src="ft2.jpg" 
+                         alt="Recuerdo 2" class="w-full h-48 object-cover rounded-lg shadow-md hover:shadow-xl transition">
+                </div>
+                <div class="floating" style="animation-delay: 0.4s;">
+                    <img src="ft3.jpg" 
+                         alt="Recuerdo 3" class="w-full h-48 object-cover rounded-lg shadow-md hover:shadow-xl transition">
+                </div>
+                <div class="floating" style="animation-delay: 0.6s;">
+                    <img src="ft5.jpg" 
+                         alt="Recuerdo 4" class="w-full h-48 object-cover rounded-lg shadow-md hover:shadow-xl transition">
+                </div>
+            </div>
+        </section>
+        
+        <!-- Poema -->
+        <section class="max-w-2xl mx-auto bg-white bg-opacity-70 rounded-lg p-6 shadow-md mb-16">
+            <h2 class="text-2xl font-dancing text-center text-pink-600 mb-6">Un poema para ti</h2>
+            <div class="text-center italic text-gray-700">
+                <p class="mb-4">Madre, palabra tan pequeña</p>
+                <p class="mb-4">pero con un significado tan grande,</p>
+                <p class="mb-4">que encierra amor, sacrificio y entrega,</p>
+                <p class="mb-4">y un corazón que nunca se cansa.</p>
+                <p class="mb-4">Eres mi refugio en la tormenta,</p>
+                <p class="mb-4">mi alegría en los días grises,</p>
+                <p class="mb-4">la mano que me guía y alimenta,</p>
+                <p>y el amor que jamás se desvanece.</p>
+            </div>
+        </section>
+        
+        <!-- Regalo virtual -->
+        <section class="text-center">
+            <h2 class="text-2xl font-dancing text-pink-600 mb-6">Un regalo para ti</h2>
+            <div class="inline-block relative">
+                <div id="giftBox" class="w-32 h-32 bg-red-500 rounded-lg shadow-lg cursor-pointer transform hover:scale-110 transition" 
+                     onclick="openGift()">
+                    <div class="absolute top-0 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-32 h-8 bg-red-600 rounded-t-lg"></div>
+                    <div class="absolute top-4 left-1/2 transform -translate-x-1/2 w-8 h-8 bg-yellow-300 rounded-full"></div>
+                    <p class="text-white font-bold pt-12">Abrir</p>
+                </div>
+            </div>
+            <div id="giftMessage" class="hidden mt-6 bg-white p-4 rounded-lg shadow-md max-w-md mx-auto">
+                <p class="text-pink-600 font-dancing text-xl">El mejor regalo eres tú, mamá. Pero hoy te regalo todo mi amor y gratitud.</p>
+                <div class="flex justify-center mt-4">
+                    <i class="fas fa-heart text-red-500 text-2xl mx-1"></i>
+                    <i class="fas fa-heart text-red-500 text-2xl mx-1"></i>
+                    <i class="fas fa-heart text-red-500 text-2xl mx-1"></i>
+                </div>
+            </div>
+        </section>
+    </div>
+    
+    <!-- Efecto de confeti -->
+    <canvas id="confetti" class="fixed top-0 left-0 w-full h-full pointer-events-none" style="z-index: 999;"></canvas>
+    
+    <script>
+        // Fotos para cambiar
+        const momPhotos = [
+            "https://images.unsplash.com/photo-1607748851687-ba3a70365e96?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80",
+            "https://images.unsplash.com/photo-1564564244660-5d73c057f2d2?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80",
+            "https://images.unsplash.com/photo-1544005313-94ddf0286df2?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80",
+            "https://images.unsplash.com/photo-1554151228-14d9def656e4?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80"
+        ];
+        
+        let currentPhotoIndex = 0;
+        
+        function changePhoto() {
+            currentPhotoIndex = (currentPhotoIndex + 1) % momPhotos.length;
+            document.getElementById('momPhoto').src = momPhotos[currentPhotoIndex];
+        }
+        
+        function openGift() {
+            document.getElementById('giftBox').classList.add('hidden');
+            document.getElementById('giftMessage').classList.remove('hidden');
+            startConfetti();
+            
+            // Detener el confeti después de 5 segundos
+            setTimeout(stopConfetti, 5000);
+        }
+        
+        // Configuración del confeti
+        const canvas = document.getElementById('confetti');
+        const ctx = canvas.getContext('2d');
+        canvas.width = window.innerWidth;
+        canvas.height = window.innerHeight;
+        
+        let particles = [];
+        let confettiActive = false;
+        
+        function startConfetti() {
+            confettiActive = true;
+            createParticles();
+            animateConfetti();
+        }
+        
+        function stopConfetti() {
+            confettiActive = false;
+            particles = [];
+            ctx.clearRect(0, 0, canvas.width, canvas.height);
+        }
+        
+        function createParticles() {
+            const colors = ['#f472b6', '#ec4899', '#db2777', '#f43f5e', '#f59e0b', '#84cc16', '#10b981', '#3b82f6'];
+            
+            for (let i = 0; i < 150; i++) {
+                particles.push({
+                    x: Math.random() * canvas.width,
+                    y: Math.random() * canvas.height - canvas.height,
+                    size: Math.random() * 10 + 5,
+                    color: colors[Math.floor(Math.random() * colors.length)],
+                    speed: Math.random() * 3 + 2,
+                    angle: Math.random() * 360,
+                    rotation: Math.random() * 0.2 - 0.1
+                });
+            }
+        }
+        
+        function animateConfetti() {
+            if (!confettiActive) return;
+            
+            ctx.clearRect(0, 0, canvas.width, canvas.height);
+            
+            for (let i = 0; i < particles.length; i++) {
+                const p = particles[i];
+                
+                ctx.save();
+                ctx.translate(p.x, p.y);
+                ctx.rotate(p.angle);
+                ctx.fillStyle = p.color;
+                ctx.fillRect(-p.size/2, -p.size/2, p.size, p.size);
+                ctx.restore();
+                
+                p.y += p.speed;
+                p.angle += p.rotation;
+                
+                if (p.y > canvas.height) {
+                    if (Math.random() > 0.5) {
+                        p.y = -p.size;
+                        p.x = Math.random() * canvas.width;
+                    } else {
+                        particles[i] = {
+                            x: Math.random() * canvas.width,
+                            y: -p.size,
+                            size: Math.random() * 10 + 5,
+                            color: p.color,
+                            speed: Math.random() * 3 + 2,
+                            angle: Math.random() * 360,
+                            rotation: Math.random() * 0.2 - 0.1
+                        };
+                    }
+                }
+            }
+            
+            requestAnimationFrame(animateConfetti);
+        }
+        
+        // Redimensionar canvas cuando cambia el tamaño de la ventana
+        window.addEventListener('resize', function() {
+            canvas.width = window.innerWidth;
+            canvas.height = window.innerHeight;
+        });
+    </script>
+</body>
+</html>
